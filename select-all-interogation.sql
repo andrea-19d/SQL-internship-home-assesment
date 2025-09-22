@@ -11,7 +11,7 @@ SELECT * FROM dbo.Employees AS E
 ORDER BY E.HireDate ASC;
 
 --- Aggregate functions:
-SELECT AVG(Salary) FROM Employees;
+SELECT AVG(Salary) as AverageSalary FROM Employees ;
 
 --- JOIN on two tables:
 SELECT E.Name, P.ProjectID
@@ -33,7 +33,7 @@ WHERE Salary > (
 );
 
 --- JOIN on multiple tables:
-SELECT E.Name, P.ProjectName, EP.Role
+SELECT E.Name, P.ProjectID, EP.Role
 FROM Employees AS E
 JOIN EmployeeProjects AS EP ON E.EmployeeID = EP.EmployeeID
 JOIN Projects AS P ON EP.ProjectID = P.ProjectID;
